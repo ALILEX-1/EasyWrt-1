@@ -41,8 +41,8 @@ jobs:
         
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/immortalwrt/immortalwrt
-        REPO_BRANCH: openwrt-24.10
+        REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x 
+        REPO_BRANCH: openwrt-21.02
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
@@ -59,7 +59,7 @@ jobs:
         cp -f ../diy/mt798x/op2.sh ./        
         chmod +x ./op2.sh && ./op2.sh      
 
-        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='EasyWrt-Redmi-AX6000-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='Jdcloud_re-cp-03-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
               
     - name: Configuration Customization - Build_mt7986_ax6000
       env:
